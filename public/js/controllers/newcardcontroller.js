@@ -16,4 +16,6 @@ app.controller('NewCardController', function ($scope, FlashCardsFactory) {
 		})
 	}
 
+	
+
 })
