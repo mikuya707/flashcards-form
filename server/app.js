@@ -32,7 +32,7 @@ app.use(function (req, res, next) {
 	next();
 });
 
-app.get('/cards', function (req, res) {
+app.get('/cards', function (req, res, next) {
 
     var modelParams = {};
 
@@ -47,3 +47,8 @@ app.get('/cards', function (req, res) {
     });
 
 });
+
+app.post('/cards', function (req, res) {
+    console.log("we r here ", req.body);
+    //FlashCardModel.create({question: re});
+})

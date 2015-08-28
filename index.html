@@ -23,9 +23,32 @@
             <loader ng-show="loading"></loader>
         </div>
         <flash-card card="flashCard" ng-hide="loading" ng-repeat="flashCard in flashCards | orderBy : 'question'"></flash-card>
+        <div ng-controller="NewCardController">
+            <p>Question:
+                <input type="text" name="question" ng-model="newCard.question" required>
+            </p>
+            <p>Answers:
+                 <input type="text" name="answers" ng-model="newCard.answers[0].text" required>
+                <input type="checkbox" name="answers" ng-model="newCard.answers[0].correct" required>
+               <input type="text" name="answers" ng-model="newCard.answers[1].text" required>
+                <input type="checkbox" name="answers" ng-model="newCard.answers[1].correct" required>
+               <input type="text" name="answers" ng-model="newCard.answers[2].text" required>
+
+                <input type="checkbox" name="answers" ng-model="newCard.answers[2].correct" required>
+            </p>
+            <p>Category:
+            <select ng-model="newCard.category" required>
+                <option ng-repeat="cat in categories">{{ cat }}</option>
+            </select>
+            </p>
+            <button type="submit" >Send</button>
+                        <pre>{{ newCard | json }}</pre>
+
+        </div>
         <script src="/js/app.js"></script>
         <script src="/js/controllers/main.controller.js"></script>
         <script src="/js/controllers/score.controller.js"></script>
+        <script src="/js/controllers/newcardcontroller.js"></script>
         <script src="/js/factories/flashcard.factory.js"></script>
         <script src="/js/factories/score.factory.js"></script>
         <script src="/js/directives/loader/loader.js"></script>

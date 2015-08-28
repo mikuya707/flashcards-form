@@ -7,6 +7,17 @@ app.factory('FlashCardsFactory', function($http) {
     'Node'
   ];
 
+  function postFlashCards(card){
+    console.log(card)
+    $.ajax({
+      type: "post",
+      url: "/cards/",
+      success: function(card){
+        alert('added! yeah!!');
+      }
+    })
+  }
+
   function getFlashCards (category) {
     var config = {};
     if (category) config.params = { category: category };
@@ -16,6 +27,7 @@ app.factory('FlashCardsFactory', function($http) {
   }
   return {
     getFlashCards: getFlashCards,
+    postFlashCards: postFlashCards,
     categories: categories
   };
 });
