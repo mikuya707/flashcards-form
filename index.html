@@ -41,7 +41,7 @@
                 <option ng-repeat="cat in categories">{{ cat }}</option>
             </select>
             </p>
-            <button type="submit" >Send</button>
+            <button type="submit" ng-click = "postCards(newCard)">Send</button>
                         <pre>{{ newCard | json }}</pre>
 
         </div>

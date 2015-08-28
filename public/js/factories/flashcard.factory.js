@@ -8,14 +8,10 @@ app.factory('FlashCardsFactory', function($http) {
   ];
 
   function postFlashCards(card){
-    console.log(card)
-    $.ajax({
-      type: "post",
-      url: "/cards/",
-      success: function(card){
-        alert('added! yeah!!');
-      }
-    })
+  return $http.post('/cards/', card).then(function(card){
+    console.log(card);
+      return card;
+    });     
   }
 
   function getFlashCards (category) {

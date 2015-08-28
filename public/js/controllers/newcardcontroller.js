@@ -9,8 +9,11 @@ app.controller('NewCardController', function ($scope, FlashCardsFactory) {
         { text: null, correct: false }
     ]
 	}
-	$scope.postCards($scope.newCard) {
-		$scope.
+	$scope.postCards = function(newCard) {
+		// console.log("we are here ", newCard);
+		FlashCardsFactory.postFlashCards(newCard).then(function(card){
+			console.log("we are here");
+		})
 	}
-	
+
 })

@@ -48,7 +48,7 @@ app.get('/cards', function (req, res, next) {
 
 });
 
-app.post('/cards', function (req, res) {
+app.post('/cards/', function (req, res) {
     console.log("we r here ", req.body);
     //FlashCardModel.create({question: re});
 })
