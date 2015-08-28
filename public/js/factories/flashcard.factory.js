@@ -10,8 +10,7 @@ app.factory('FlashCardsFactory', function($http) {
   function postFlashCards(card){
     console.log("here", card);
   return $http.post('/cards/', card).then(function(card){
-    console.log(card);
-      return card;
+      return card.data;
     });     
   }
 

@@ -10,12 +10,12 @@ app.controller('NewCardController', function ($scope, FlashCardsFactory) {
     ]
 	}
 	$scope.postCards = function(newCard) {
-		// console.log("we are here ", newCard);
+		console.log("postCards", newCard);
 		FlashCardsFactory.postFlashCards(newCard).then(function(card){
-			console.log("we are here");
+			
 		})
 	}
 
-	
+
 
 })
