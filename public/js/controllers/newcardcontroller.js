@@ -9,6 +9,8 @@ app.controller('NewCardController', function ($scope, FlashCardsFactory) {
         { text: null, correct: false }
     ]
 	}
-	
+	$scope.postCards($scope.newCard) {
+		$scope.
+	}
 	
 })
